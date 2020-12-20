@@ -1,6 +1,9 @@
 # ADSR
 ADSR based on lookup table for Arduino Due (and other Arduinos). Advantages of this implementation are that it is extremely light-weight, has a differential profile and that the attack, decay and release times can be precisely controlled.
 
+See as well my youtube video on how to use this class:
+https://youtu.be/oMxui9rar9M
+
 # Installation
 1) Make a new folder called "adsr" in your arduino libraries folder
 2) Copy adsr.cpp and adsr.h into the "adsr" folder
