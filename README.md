@@ -13,7 +13,7 @@ Please refer to the ADSR_example.ino file in the examples folder. This file is w
 NOTE: you can change the shape of the ADSR by changing the ATTACK_ALPHA and ATTACK_DECAY_RELEASE parameters in adsr.h
 
 # Updates
-29.12.2020: fixed issue for very long delay times (conversion to float was needed)
+29.12.2020: fixed issue for very long delay times (conversion to float was needed). Delays up to 20s verified.
 
 
 Have fun ;-)
