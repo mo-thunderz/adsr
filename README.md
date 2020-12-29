@@ -15,6 +15,7 @@ NOTE: you can change the shape of the ADSR by changing the ATTACK_ALPHA and ATTA
 # Updates
 29.12.2020: fixed issue for very long delay times (conversion to float was needed)
 
+
 Have fun ;-)
 
 mo thunderz
