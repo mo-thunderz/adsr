@@ -1,8 +1,14 @@
+//----------------------------------//
+// ADSR class for Arduino
+// by mo-thunderz
+// version 1.1
+// last update: 29.12.2020
+//----------------------------------//
+
 #include "Arduino.h"
 
 #ifndef ADSR
 #define ADSR
-
 
 // for array for lookup table
 #define ARRAY_SIZE 1024					// number of time points
