@@ -29,7 +29,7 @@ unsigned long   adsr_decay = 100000;                // time in µs
 int             adsr_sustain = 2500;                // sustain level -> from 0 to DACSIZE-1
 unsigned long   adsr_release = 100000;              // time in µs
 unsigned long   trigger_duration = 300000;          // time in µs
-unsigned long   space_between_triggers = 500000;    // time in µs
+unsigned long   space_between_triggers = 300000;    // time in µs
 
 // internal variables
 bool trigger_on = false;                            // simple bool to switch trigger on and off
