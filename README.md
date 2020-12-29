@@ -12,6 +12,9 @@ https://youtu.be/oMxui9rar9M
 Please refer to the ADSR_example.ino file in the examples folder. This file is written for the Arduino Due and can be run on other Arduino boards with some small modifications. I used the Due as it has a built-in DAC.
 NOTE: you can change the shape of the ADSR by changing the ATTACK_ALPHA and ATTACK_DECAY_RELEASE parameters in adsr.h
 
+# Updates
+29.12.2020: fixed issue for very long delay times (conversion to float was needed)
+
 Have fun ;-)
 
 mo thunderz
