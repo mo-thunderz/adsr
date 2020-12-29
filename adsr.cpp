@@ -1,3 +1,10 @@
+//----------------------------------//
+// ADSR class for Arduino
+// by mo-thunderz
+// version 1.1
+// last update: 29.12.2020
+//----------------------------------//
+
 #include "Arduino.h"
 #include "adsr.h"
 #include <math.h>
@@ -71,7 +78,7 @@ int adsr::getWave(unsigned long l_micros)
 	if(_t_note_off < _t_note_on)		{			// if note is pressed
 		delta = l_micros - _t_note_on;
 		if(delta < _attack)									// Attack
-			_adsr_output = map(_attack_table[(int)floor(ARRAY_SIZE * (float) delta / (float) _attack)], 0, _vertical_resolution - 1, _attack_start, _vertical_resolution - 1);		//
+			_adsr_output = map(_attack_table[(int)floor(ARRAY_SIZE * (float) delta / (float)_attack)], 0, _vertical_resolution - 1, _attack_start, _vertical_resolution - 1);		//
 		else if(delta < _attack + _decay) { // Decay
 			delta = l_micros - _t_note_on - _attack;
 			_adsr_output = map(_decay_release_table[(int)floor(ARRAY_SIZE * (float) delta / (float) _decay)], 0, _vertical_resolution - 1, _sustain, _vertical_resolution - 1);
