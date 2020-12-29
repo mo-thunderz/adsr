@@ -71,10 +71,10 @@ int adsr::getWave(unsigned long l_micros)
 	if(_t_note_off < _t_note_on)		{			// if note is pressed
 		delta = l_micros - _t_note_on;
 		if(delta < _attack)									// Attack
-			_adsr_output = map(_attack_table[(int)floor(ARRAY_SIZE * delta / _attack)], 0, _vertical_resolution - 1, _attack_start, _vertical_resolution - 1);		//
+			_adsr_output = map(_attack_table[(int)floor(ARRAY_SIZE * (float) delta / (float) _attack)], 0, _vertical_resolution - 1, _attack_start, _vertical_resolution - 1);		//
 		else if(delta < _attack + _decay) { // Decay
 			delta = l_micros - _t_note_on - _attack;
-			_adsr_output = map(_decay_release_table[(int)floor(ARRAY_SIZE * delta / _decay)], 0, _vertical_resolution - 1, _sustain, _vertical_resolution - 1);
+			_adsr_output = map(_decay_release_table[(int)floor(ARRAY_SIZE * (float) delta / (float) _decay)], 0, _vertical_resolution - 1, _sustain, _vertical_resolution - 1);
 		}
 		else
 			_adsr_output = _sustain;
@@ -82,7 +82,7 @@ int adsr::getWave(unsigned long l_micros)
 	if(_t_note_off > _t_note_on)		{			// if note not pressed
 		delta = l_micros - _t_note_off;
 		if(delta < _release)								// release
-			_adsr_output = map(_decay_release_table[(int)floor(ARRAY_SIZE * delta / _release)], 0, _vertical_resolution - 1, 0, _release_start);
+			_adsr_output = map(_decay_release_table[(int)floor(ARRAY_SIZE * (float) delta / (float) _release)], 0, _vertical_resolution - 1, 0, _release_start);
 		else
 			_adsr_output = 0;									// note off
 	}
