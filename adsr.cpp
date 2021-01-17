@@ -17,17 +17,17 @@ adsr::adsr(int l_vertical_resolution)
 	_decay = 100000;																				// take 100ms as initial value for Decay
 	_release = 100000;																			// take 100ms as initial value for Release
 
-	for (int i; i<ARRAY_SIZE; i++) {												// Create look-up table for Attack
+	for (int i = 0; i<ARRAY_SIZE; i++) {												// Create look-up table for Attack
 		_attack_table[i] = i;
 		_decay_release_table[i] = _vertical_resolution - 1 - i;
 	}
 
-	for (int i; i<ARRAY_SIZE-1; i++) {											// Create look-up table for Decay
+	for (int i = 0; i<ARRAY_SIZE-1; i++) {											// Create look-up table for Decay
 		_attack_table[i+1] = (1.0 - ATTACK_ALPHA) * (_vertical_resolution - 1) + ATTACK_ALPHA * _attack_table[i];
 		_decay_release_table[i+1] = ATTACK_DECAY_RELEASE * _decay_release_table[i];
 	}
 
-	for (int i; i<ARRAY_SIZE; i++) {												// normalize table to min and max
+	for (int i = 0; i<ARRAY_SIZE; i++) {												// normalize table to min and max
 		_attack_table[i] = map(_attack_table[i], 0, _attack_table[ARRAY_SIZE-1], 0, _vertical_resolution - 1);
 		_decay_release_table[i] = map(_decay_release_table[i], _decay_release_table[ARRAY_SIZE-1], _decay_release_table[0], 0, _vertical_resolution - 1);
 	}
