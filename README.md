@@ -14,6 +14,7 @@ NOTE: you can change the shape of the ADSR by changing the ATTACK_ALPHA and ATTA
 
 # Updates
 29.12.2020: fixed issue for very long delay times (conversion to float was needed). Delays up to 20s verified.
+14.08.2022: added a function setResetAttack(bool l_reset_attack); -> By setting the reset attack to true (default is false) the ADSR will always start at 0 when a new trigger is received. In the default setting a new trigger starts at the current output value.
 
 
 Have fun ;-)
